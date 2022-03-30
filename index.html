@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Menú Navegación</title>
+	<link rel="stylesheet" type="text/css" href="sec/estilos1.css">
+</head>
+<body>
+<header class="header">
+	<nav class="nav">
+		<div class="divmov"><a href="" class="logo nav-link"><b>MENU</b></a></div>
+		<ul class="nav-menu">
+			<li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Opciones 1-3 &nbsp<img src="sec\arrow.png" alt="" width="8px" height="8px"></a>
+				<div id="div1" class="dropdown">
+					<div class="d-flex columnas">
+                		<a onclick="mayor()" class="p4 hola">Mayor de N numeros</a>
+                		<a onclick="menor()" class="p4 hola">Menor de N numeros</a>
+                		<a onclick="positivo()" class="p4 hola">Positivo, negativo o cero</a>
+                	</div>
+            	</div>
+            </li>
+			<li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Opciones 4-6 &nbsp<img src="sec\arrow.png" alt="" width="8px" height="8px"></a>
+				<div id="div2" class="dropdown">
+					<div class="d-flex columnas2">
+                		<a onclick="par()" class="p4 hola">Par o impar</a>
+                		<a onclick="edad()" class="p4 hola">Mayoría de edad (edad)</a>
+                		<a onclick="fecha_nacimiento()" class="p4 hola">Mayoría de edad (fecha de nacimiento)</a>
+                	</div>
+            	</div>
+			</li>
+			<li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Opciones 7-9 &nbsp<img src="sec\arrow.png" alt="" width="8px" height="8px"></a>
+				<div id="div3" class="dropdown">
+					<div class="d-flex columnas2">
+                		<a onclick="membresia()" class="p4 hola">Tienda de zapatos</a>
+                		<a onclick="ingreso()" class="p4 hola">Ingreso a la universidad</a>
+                		<a onclick="signo()" class="p4 hola">Signo Zodiacal</a>
+                	</div>
+            	</div>
+			</li>
+			<li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Opciones 10-12 &nbsp<img src="sec\arrow.png" alt="" width="8px" height="8px"></a>
+				<div id="div4" class="dropdown">
+					<div class="d-flex columnas2">
+                		<a onclick="promedio()" class="p4 hola">Menor, mayor y promedio de N numeros</a>
+                		<a onclick="suma_n()" class="p4 hola">Suma de 0 hasta N</a>
+                		<a onclick="ordenar()" class="p4 hola">Ordenar una serie de números</a>
+                	</div>
+            	</div>
+			</li>
+		</ul>
+	</nav>
+</header>
+<div align="center" style="padding: 30px; font-size: 30px; font-family: monospace;"><h1 class="linea" id="demo"></h1></div>
+<br><br><br><br>
+<div align="center"><img class="loco" src="Bueno.png" alt=""></div>
+
+</body>
+<script style="text-align: center;">
+	function mayor() {
+		let comp = prompt("Ingrese la cantidad de números que comparará");
+		comp = parseInt(comp);
+		const a = [];
+		for (var i = 0; i < comp; i++) {
+			i = parseInt(i);
+			s=i+1;
+			j = prompt("Ingrese el valor " + s + " a comparar");
+			j = parseInt(j);
+			a[i] = j;
+		}
+		let d=a[0];
+		let t;
+		for (var i = 0; i < comp; i++) {
+			i = parseInt(i);
+			if (a[i] >= d ) {
+				d = a[i];
+				t=i+1
+			} 
+		}
+		document.getElementById("demo").innerHTML = ("El número mayor es el " + t + "° ingresado, el " + d);
+		window.alert("El número mayor es el " + t + "° ingresado, el " + d); 
+
+		document.getElementsByClassName("loco")[0].src = "Mayor.png";
+	}
+
+	function menor() {
+		let comp = prompt("Ingrese la cantidad de números que comparará");
+		comp = parseInt(comp);
+		const a = [];
+		for (var i = 0; i < comp; i++) {
+			i = parseInt(i);
+			s=i+1;
+			j = prompt("Ingrese el valor " + s + " a comparar");
+			j = parseInt(j);
+			a[i] = j;
+		}
+		let d=a[0];
+		let t;
+		for (var i = 0; i < comp; i++) {
+			i = parseInt(i);
+			if (a[i] <= d ) {
+				d = a[i];
+				t=i+1
+			} 
+		}
+		document.getElementById("demo").innerHTML = ("El número menor es el " + t + "° ingresado, el " + d);
+		window.alert("El número menor es el " + t + "° ingresado, el " + d);
+		document.getElementsByClassName("loco")[0].src = "Menor.png";
+	}	
+	
+	function positivo(){
+		let a = prompt("Ingresa el numero a verificar", "");
+		let b;
+		if (a>0){
+			b = "El numero " + a + " es positivo"
+		}
+		else if (a<0){
+			b = "El número " + a + " es negativo"
+		}
+		else {
+			b = "El numero ingresado es de valor nulo, 0"
+		}
+	document.getElementById('demo').innerHTML = b;
+	window.alert(b);
+	document.getElementsByClassName("loco")[0].src = "+-.png";
+	}
+
+	function par() {
+		let a = prompt("Ingrese un numero para verificar su paridad", "")
+		a = parseInt(a);
+		let b;
+		if (a%2==0){
+			b = a + " es un número par";
+		}
+		else if (a%2==1) {
+			b = a + " es un número impar";
+		}
+		window.alert(b);
+		document.getElementById('demo').innerHTML = b;
+		document.getElementsByClassName("loco")[0].src = "par.png";
+	}
+
+	function edad(){
+		let a = prompt("Ingresa tu edad", "");
+		a=parseInt(a);
+		let b;
+		if (a>=18){
+			b = "Eres mayor de edad, ya que cuentas con " + a + " años";
+		}
+		else {
+			b = "Eres menor de edad, ya que tienes " + a + " años";
+		}
+		window.alert(b);
+		document.getElementById('demo').innerHTML = b;
+		document.getElementsByClassName("loco")[0].src = "Edad.png"; 
+	}
+	function fecha_nacimiento() {
+
+		let a = parseInt(prompt("Ingresa tu día de nacimiento (Ej. 16)", 16)); 
+		while (a<1 || a>31){
+			window.alert("Fecha no válida");
+			a = parseInt(prompt("Ingresa tu día de nacimiento (Ej. 16)", 16));
+		}
+
+		let b = parseInt(prompt("Ingresa tu mes de nacimiento (Ej. 3)", 3)); 
+		while (b<1 || b>12){
+			window.alert("Fecha no válida");
+			b = parseInt(prompt("Ingresa tu mes de nacimiento (Ej. 3)", 3));
+		}
+
+		let e = new Date();
+		let f = parseInt(e.getDate());
+		let g = parseInt(e.getMonth());
+		g = g+1;
+		let h = parseInt(e.getFullYear());
+
+		let c = parseInt(prompt("Ingresa tu año de nacimiento (Ej. 2005)", 2005));
+		while (c<1 || c>h){
+			window.alert("Fecha no válida");
+			c = parseInt(prompt("Ingresa tu año de nacimiento (Ej. 2005)", 2005));
+		}
+		
+		let d = (c * 365) + (b*30) + a;
+		let i = (h * 365) + (g*30) + f;
+		let j = i-d;
+		let k = Math.floor(j / 365);
+		let l = j % 365;
+		let m = Math.floor(l / 31);
+
+		window.alert("Tienes " + k + " años y " + m + " meses");
+		document.getElementById('demo').innerHTML = ("Tienes " + k + " años y " + m + " meses"); 
+		if (k>=18) {
+			window.alert("Eres mayor de edad");
+			document.getElementById('demo').innerHTML = ("Tienes " + k + " años y " + m + " meses. Eres mayor de edad"); 
+		}
+		else {
+			window.alert("Eres menor de edad");
+			document.getElementById('demo').innerHTML = ("Tienes " + k + " años y " + m + " meses. Eres menor de edad");	
+		}
+		document.getElementsByClassName("loco")[0].src = "Edad.png";
+	}
+	function membresia() {
+		let j;
+		let s;
+		let k = 0;
+		let comp = prompt("Ingrese la cantidad de pares de zapatos que va a comprar");
+		comp = parseInt(comp);
+		for (var i = 0; i < comp; i++) {
+			i = parseInt(i);
+			s=i+1;
+			j = parseFloat(prompt("Ingrese el precio del par " + s, 0));
+			while (j<0) {
+				window.alert("No hay ningún par con precio negativo")
+				j = parseFloat(prompt("Ingrese el precio del par " + s, 0));
+			}
+			k=k+j;
+		}
+		let z = parseInt(prompt("Ingresa tu tipo de membresia", "105, 206 o 307. Si no tiene membresía, 0"));
+		let y;
+		while (z!=105 && z!=206 && z!=307 && z!=0) {
+			window.alert("Dato ingresado no válido");
+			z = parseInt(prompt("Ingresa tu tipo de membresia", "105, 206 o 307. Si no tiene membresía, 0"));
+		}
+		if (z==105) {
+			window.alert("Su membresía es del tipo 105, lo que le otorga un 13% de descuento");
+			y = k * 87 / 100;
+			window.alert("Al precio total ("+k+"), se le aplica un descuento del 13% con su membresía. El precio final será de $"+y);
+		}
+		else if (z==206) {
+			window.alert("Su membresía es del tipo 206, lo que le otorga un 22% de descuento");
+			y = k * 78 / 100;
+			window.alert("Al precio total ("+k+"), se le aplica un descuento del 22%% con su membresía. El precio final será de $"+y);
+		}
+		else if (z==307) {
+			window.alert("Su membresía es del tipo 307, lo que le otorga un 28% de descuento");
+			y = k * 72 / 100;
+			window.alert("Al precio total ("+k+"), se le aplica un descuento del 28% con su membresía. El precio final será de $"+y);
+		}
+		else if (z==0) {
+			window.alert("No cuenta con una membresía");
+			y=k;
+			window.alert("Por no contar con membresía, el precio final será de $"+y);
+		}
+		document.getElementById('demo').innerHTML = "Pague $"+y+" pesos";
+		document.getElementsByClassName("loco")[0].src = "zapato.png";
+	}
+	function ingreso() {
+		window.alert("Ésta página te dirá si fuiste aceptado en la Universidad o no.")
+		let a = parseFloat(prompt("Ingresa tu promedio final de bachillerato", 8.6));
+		while (a<0 || a>10) {
+			window.alert("Calificación imposible. Unicamente puede estar entre el 0 y el 10");
+			a = parseFloat(prompt("Ingresa tu promedio final de bachillerato", 8.6));
+		}
+		let b = parseInt(prompt("Ingresa tu puntaje obtenido en el EXANI", 1051));
+		while (b<0) {
+			window.alert("Puntaje imposible. No puede ser menor a 0");
+			b = parseInt(prompt("Ingresa tu puntaje obtenido en el EXANI", 1051));
+		}	
+		let c = parseInt(prompt("Ingresa tu puntaje en el examen de ingreso", 801));
+		while (b<0) {
+			window.alert("Puntaje imposible. No puede ser menor a 0");
+			c = parseInt(prompt("Ingresa tu puntaje en el examen de ingreso", 801));
+		}	
+		if (a>8.5 && b>1050 && c>800) {
+			window.alert("¡Felicidades, su solicitud de ingreso a la universidad fue aceptada!");
+			document.getElementById('demo').innerHTML = "Solicitud aceptada";
+		}
+		else {
+			window.alert("¡Lástima!, su solicitud de ingreso fue declinada...");
+			document.getElementById('demo').innerHTML = "Solicitud declinada";
+		}
+		document.getElementsByClassName("loco")[0].src = "uaa.png";
+	}
+	function signo() {
+		let dia = parseInt(prompt("Ingresa tu día de nacimiento"));
+    	let mes = parseInt(prompt("Ingresa tu mes de nacimiento"));
+    	let sign;
+    	if((dia>=21&&mes==3)||(dia<=20&&mes==4)){
+        	sign = "Tu signo es Aries";
+    	}
+    	if((dia>=24&&mes==9)||(dia<=23&&mes==10)){
+        	sign = "Tu signo es Libra";
+    	}
+    	if((dia>=21&&mes==4)||(dia<=21&&mes==5)){
+        	sign = "Tu signo es Tauro";
+    	}
+    	if((dia>=24&&mes==10)||(dia<=22&&mes==11)){
+        	sign = "Tu signo es Escorpio";
+    	}
+    	if((dia>=22&&mes==5)||(dia<=21&&mes==6)){
+        	sign = "Tu signo es Géminis";
+    	}
+    	if((dia>=23&&mes==11)||(dia<=21&&mes==12)){
+        	sign = "Tu signo es Sagitario";
+    	}
+    	if((dia>=21&&mes==6)||(dia<=23&&mes==7)){
+        	sign = "Tu signo es Cáncer";
+    	}
+    	if((dia>=22&&mes==12)||(dia<=20&&mes==1)){
+        	sign = "Tu signo es Capricornio";
+    	}
+    	if((dia>=24&&mes==7)||(dia<=23&&mes==8)){
+        	sign = "Tu signo es Leo";
+    	}
+    	if((dia>=21&&mes==1)||(dia<=19&&mes==2)){
+        	sign = "Tu signo es Acuario";
+    	}
+    	if((dia>=24&&mes==8)||(dia<=23&&mes==9)){
+        	sign = "Tu signo es Virgo";
+    	}
+    	if((dia>=20&&mes==2)||(dia<=20&&mes==3)){
+        	sign = "Tu signo es Piscis";
+    	}
+    	window.alert(sign)
+    	document.getElementById('demo').innerHTML = sign;
+    	document.getElementsByClassName("loco")[0].src = "zodiaco.png";
+	}
+	function promedio() {
+		let comp = prompt("Ingrese la cantidad de números que comparará y promediará");
+		comp = parseInt(comp);
+		const a = [];
+		let r=0;
+		for (var i = 0; i < comp; i++) {
+			i = parseInt(i);
+			s=i+1;
+			j = prompt("Ingrese el valor " + s + " a comparar");
+			j = parseInt(j);
+			a[i] = j;
+			r=r+j;
+		}
+		let d=a[0];
+		let m=a[0];
+		let t;
+		let p;
+		
+		for (var i = 0; i < comp; i++) {
+			i = parseInt(i);
+
+			if (a[i] >= d ) {
+				d = a[i];
+				t=i+1
+			} 
+
+			if (a[i] <= m ) {
+				m = a[i];
+				p=i+1
+			} 		
+		}
+		let w=r/comp;
+		document.getElementById("demo").innerHTML = "El numero menor es "+m+", el mayor es "+d+" y el promedio es de "+w;
+		window.alert("El número mayor es el " + t + "° ingresado, el " + d);
+		window.alert("El número menor es el " + p + "° ingresado, el " + m);
+		window.alert("El promedio de los números ingresados es " + w);
+		document.getElementsByClassName("loco")[0].src = "promedio.png";
+	}
+	function suma_n () {
+		let a=parseInt(prompt("Ingresa el último número de la suma")), b;
+		if (a>=0) {
+			b = a*(a+1)/2;
+			window.alert("La suma de los números desde 0 hasta "+a+" es de "+b);
+			document.getElementById("demo").innerHTML = "La suma de los números desde 0 hasta "+a+" es de "+b;
+		}
+		else {
+			b = a*(a-1)/2;
+			window.alert("La suma de los números desde "+a+" hasta 0 es de "+(-b));
+			document.getElementById("demo").innerHTML = "La suma de los números desde "+a+" hasta 0 es de "+(-b);
+			document.getElementsByClassName("loco")[0].src = "+-.png";
+		}
+	}
+	function ordenar() {
+		let a = parseInt(prompt("Ingrese la cantidad de numeros que se ordenarán")), c, d, e;
+		const b = [];
+		for (var i = 0; i < a; i++) {
+			b[i] = parseFloat(prompt("Ingrese el "+(i+1)+ "° valor de la serie"));
+		}
+		b.sort((j, k) => {
+  		if(j == k) {
+    	return 0; 
+  		}
+  		if(j < k) {
+    	return -1;
+  		}
+  		return 1;
+		});
+		//c = b[0];
+		//for (var i = 0; i < a; i++) {
+		//	for (var z = i; z < a; z++) {
+		//		if (c>=b[z]) {
+		//			e = c;
+		//			c = b[z];
+		//			b[z] = e;
+		//		}
+		//	}
+		//	if (c<=b[i]) {
+		//		d=b[i];
+		//		b[i]=c;
+		//		c=d;
+		//}
+		//}
+		window.alert("Los números en orden ascendente son: "+b);
+		document.getElementById("demo").innerHTML = "Los números en orden ascendente son: "+b;
+		document.getElementsByClassName("loco")[0].src = "orden.png";
+	}
+</script>
+</html>

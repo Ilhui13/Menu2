@@ -1,0 +1,275 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.divmov {
+  width: 100px;
+  height: 30px;
+  margin-left: 30px;
+  background-color: #0769e9;
+  position: relative;
+  animation: example 3s linear 1s infinite alternate;
+}
+
+@keyframes example {
+  0%   {background-color:#0769e9; left:0px; top:0px;}
+  20%  {background-color:#0769e9; left:0px; top:-10px;}
+  40%  {background-color:#0769e9; left:10px; top:-10px;}
+  60%  {background-color:#0769e9; left:10px; top:-10px;}
+  80%  {background-color:#0769e9; left:10px; top: 0px;}
+  100% {background-color:#0769e9; left:0px; top:0px;}
+}
+
+body {
+	font-family: sans-serif;
+	padding: 90px 20px 0;
+	background-color: black;
+	animation-name: fondo;
+	animation-duration: 20s;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+}
+
+
+@keyframes fondo {
+  0%  {background-color: black;}
+  50% {background-color: #152636;}
+  100% {background-color: black;}
+}
+
+.header {
+	background-color: #0769e9;
+	height: 80px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.nav {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+}
+
+.nav-link {
+	text-decoration: none;
+}
+
+.nav-menu-link {
+	color: white;
+}
+
+.logo {
+	font-size: 30px;
+	font-weight: bold;
+	padding: 0 40px;
+	line-height: 80px;
+	color: white;
+	animation-name: letras-color;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes letras-color {
+  0%   {color: white;}
+  20%  {color: white;}
+  40%  {color: black;}
+  60%  {color: black;}
+  80%  {color: black;}
+  100% {color: white;}
+}
+
+.nav-menu {
+	display: flex;
+	margin-right: 40px;
+	list-style: none;
+}
+
+.nav-menu-item {
+	font-size: 18px;
+	margin: 0 35px;
+	line-height: 80px;
+	text-transform: uppercase;
+	width: max-content;
+	transition: font 2s;
+	
+}
+
+.nav-menu-item:hover {
+	font-size: 22px;
+	color: red;
+	line-height: 80px;
+	text-transform: uppercase;
+	width: max-content;
+}
+
+.hola {
+	text-shadow: none;
+	color: black;
+	cursor: hand;
+}
+
+nav ul {
+	margin-left: 270px;
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+
+nav ul li {
+
+  list-style: none;
+  float: left;
+  position: relative;
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: whitesmoke;
+
+}
+
+.dropdown {
+  background: #0769e9;
+  width: 100%;
+  padding: 0 80px;
+  margin: 0px -5px;
+  max-width: 960px;
+  align-self: center;
+  text-align: center;
+  transition: margin 2s;
+}
+
+.dropdown a {
+  line-height: 1.4;
+  font-size: 15px;
+  transition: font 2s;
+}
+
+.dropdown a:hover {
+  font-size: 17px;
+}
+
+nav ul li:hover > .dropdown {
+  display: flex;
+}
+
+nav ul li .dropdown {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+.dropdown1 {
+  background: #0769e9;
+  width: 100%;
+  padding: 0 80px;
+  margin: 0px -30px;
+  max-width: 960px;
+  align-self: center;
+  text-align: center;
+  transition: margin 2s;
+}
+
+.dropdown1 a {
+  line-height: 1.4;
+  font-size: 15px;
+  transition: font 2s;
+}
+
+.dropdown1 a:hover {
+  font-size: 17px;
+}
+
+nav ul li:hover > .dropdown1 {
+  display: flex;
+}
+
+nav ul li .dropdown1 {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+a {
+	cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.p4 {
+  padding: 1.5rem;
+}
+
+hr {
+  width: 80px;
+  border-color: ghostwhite;
+  margin: 49px;
+}
+
+.columnas {
+  margin: 0 -65px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  flex-direction: column;
+}
+
+.loco{
+	text-align: center;
+}
+
+.columnas2 {
+  margin: 0 -80px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  flex-direction: column;
+}
+
+.columnas3 {
+  margin: 0 -65px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  flex-direction: column;
+}
+
+
+.columnas1 {
+  margin: 0 -73px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.linea {
+	display: inline;
+	color: white;
+	text-align: center;
+	animation-name: letras;
+	animation-duration: 20s;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+
+}
+
+@keyframes letras {
+  0%  {color: whitesmoke;}
+  50% {color: #badcff;}
+  100% {color: whitesmoke;}
+}
